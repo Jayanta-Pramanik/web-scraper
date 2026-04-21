@@ -7,18 +7,29 @@
 
 <body>
 
-<div class="container">
-
-    <h1>🔍 Search Products</h1>
-
-    <div class="search-box">
-        <input type="text" id="product" placeholder="Search product...">
-        <button onclick="search()">Search</button>
-    </div>
-
-    <div class="cards" id="cards"></div>
-
+<!-- NAV -->
+<div class="navbar">
+    <a href="index.html">← Back</a>
+    <h3>🔍 Search</h3>
 </div>
+
+<h1>Search Products</h1>
+
+<!-- SEARCH BOX -->
+<div class="search-box">
+    <input type="text" id="product" placeholder="Search product...">
+    <button onclick="search()">Search</button>
+</div>
+
+<!-- POPULAR -->
+<div class="top-search">
+    🔥 Popular:
+    <span onclick="quickSearch('laptop')">Laptop</span>
+    <span onclick="quickSearch('phone')">Phone</span>
+</div>
+
+<!-- RESULTS -->
+<div class="cards" id="cards"></div>
 
 <script src="static/script.js"></script>
 
