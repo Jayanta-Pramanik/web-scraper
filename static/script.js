@@ -74,5 +74,10 @@ cards.innerHTML += card;
 });
 
 },1000);
+}
 
+// QUICK SEARCH
+function quickSearch(item){
+document.getElementById("product").value = item;
+search();
 }
