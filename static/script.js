@@ -1,33 +1,44 @@
 async function search(){
-    let query = document.getElementById("product").value.toLowerCase();
-    let loader = document.getElementById("loader");
-    let cards = document.getElementById("cards");
 
+    let query = document.getElementById("product").value.toLowerCase();
+    let cards = document.getElementById("cards");
+    let loader = document.getElementById("loader");
+
+    // reset
     cards.innerHTML = "";
     loader.style.display = "block";
 
     setTimeout(()=>{
-        loader.style.display = "none";
 
         let data = [];
 
         if(query.includes("laptop")){
             data = [
-                {title:"HP Laptop", price:"₹45000", rating:"4.3⭐"},
-                {title:"Dell Laptop", price:"₹52000", rating:"4.5⭐"}
+                {title:"HP Laptop", price:"₹50000", rating:"4.3 ⭐"},
+                {title:"Dell Laptop", price:"₹55000", rating:"4.5 ⭐"}
             ];
-        } 
-        else if(query.includes("mobile")){
+        }
+
+        else if(query.includes("phone")){
             data = [
-                {title:"iPhone 13", price:"₹60000", rating:"4.7⭐"},
-                {title:"Samsung Galaxy", price:"₹30000", rating:"4.4⭐"}
+                {title:"iPhone", price:"₹70000", rating:"4.7 ⭐"},
+                {title:"Samsung Galaxy", price:"₹40000", rating:"4.4 ⭐"}
             ];
-        } 
-        else {
+        }
+
+        else if(query.includes("watch")){
+            data = [
+                {title:"Smart Watch", price:"₹2499", rating:"4.2 ⭐"}
+            ];
+        }
+
+        else{
             data = [
                 {title:"No results found", price:"", rating:""}
             ];
         }
+
+        loader.style.display = "none";
 
         data.forEach(item=>{
             let card = `
