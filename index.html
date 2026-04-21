@@ -4,49 +4,56 @@
 <title>Smart Product Finder</title>
 
 <style>
-body{
+*{
     margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg,#0f172a,#1e293b);
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
 }
 
-/* Glass box */
-.box{
+body{
+    background: linear-gradient(135deg,#0f172a,#020617);
+    color:white;
+}
+
+/* Header */
+header{
+    padding:20px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
-    padding:40px;
-    border-radius:20px;
+}
+
+/* Container */
+.container{
     text-align:center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    width:400px;
+    padding:60px 20px;
 }
 
 /* Title */
 h1{
+    font-size:40px;
     margin-bottom:20px;
 }
 
 /* Input */
 input{
-    padding:12px;
-    width:80%;
+    padding:15px;
+    width:300px;
     border:none;
     border-radius:10px;
-    margin-bottom:15px;
     outline:none;
 }
 
 /* Button */
 button{
-    padding:12px 25px;
+    padding:15px 25px;
     border:none;
     border-radius:10px;
-    background: linear-gradient(45deg,#22c55e,#16a34a);
+    margin-left:10px;
+    background: linear-gradient(45deg,#22c55e,#4ade80);
     color:white;
     cursor:pointer;
     transition:0.3s;
@@ -54,55 +61,115 @@ button{
 
 button:hover{
     transform: scale(1.05);
-    background: linear-gradient(45deg,#16a34a,#15803d);
 }
 
-/* Fake result box */
-.result{
-    margin-top:20px;
-    display:none;
+/* Cards */
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+/* Card */
+.card{
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding:20px;
+    border-radius:15px;
+    width:220px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+/* Price */
+.price{
+    color:#22c55e;
+    font-weight:bold;
+}
+
+/* Rating */
+.rating{
+    color:gold;
 }
 
 /* Loader */
 .loader{
+    display:none;
+    margin-top:30px;
+}
+
+.spinner{
     border:4px solid #333;
     border-top:4px solid #22c55e;
     border-radius:50%;
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
     animation:spin 1s linear infinite;
-    margin:20px auto;
+    margin:auto;
 }
 
 @keyframes spin{
     100%{transform:rotate(360deg);}
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="box">
-    <h1>🛒 Smart Product Finder</h1>
+<header>
+🚀 Smart Product Finder
+</header>
 
-    <input type="text" id="product" placeholder="Enter product name...">
-    <br>
-    <button onclick="search()">Search</button>
+<div class="container">
 
-    <div class="result" id="result">
-        <div class="loader"></div>
-        <p>Finding best products...</p>
-    </div>
+<h1>Find Best Products Instantly</h1>
+
+<input type="text" id="product" placeholder="Search product...">
+<button onclick="search()">Search</button>
+
+<div class="loader" id="loader">
+    <div class="spinner"></div>
+    <p>Searching products...</p>
+</div>
+
+<div class="cards" id="cards"></div>
+
 </div>
 
 <script>
 function search(){
-    let box = document.getElementById("result");
-    box.style.display = "block";
+    let loader = document.getElementById("loader");
+    let cards = document.getElementById("cards");
+
+    cards.innerHTML = "";
+    loader.style.display = "block";
 
     setTimeout(()=>{
-        box.innerHTML = "<p>✅ Results ready (Backend needed for real data)</p>";
+        loader.style.display = "none";
+
+        // Fake products
+        let data = [
+            {title:"Wireless Headphones", price:"₹1999", rating:"4.5⭐"},
+            {title:"Smart Watch", price:"₹2499", rating:"4.2⭐"},
+            {title:"Bluetooth Speaker", price:"₹1499", rating:"4.4⭐"}
+        ];
+
+        data.forEach(item=>{
+            let card = `
+            <div class="card">
+                <h3>${item.title}</h3>
+                <p class="price">${item.price}</p>
+                <p class="rating">${item.rating}</p>
+            </div>
+            `;
+            cards.innerHTML += card;
+        });
+
     },2000);
 }
 </script>
