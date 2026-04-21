@@ -1,81 +1,97 @@
 body{
     margin:0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg,#020617,#0f172a);
+    background: radial-gradient(circle at top,#020617,#000814);
     color:white;
-    text-align:center;
 }
 
+/* HEADER */
 header{
-    padding:20px;
-    font-size:22px;
-    font-weight:bold;
-    background:rgba(255,255,255,0.05);
+    padding:20px 40px;
+    font-size:20px;
+    font-weight:600;
+    background: rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
 }
 
+/* CENTER CONTENT */
 .container{
-    margin-top:60px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin-top:80px;
 }
 
+/* TITLE */
 h1{
-    font-size:42px;
+    font-size:48px;
     margin-bottom:30px;
 }
 
-/* Search box */
-.search-box input{
+/* INPUT */
+input{
     padding:15px;
-    width:350px;
+    width:380px;
     border:none;
     border-radius:12px;
     font-size:16px;
     outline:none;
 }
 
-/* Cards layout */
+/* CARDS GRID */
 .cards{
     display:flex;
-    justify-content:center;
-    gap:25px;
+    gap:30px;
     margin-top:50px;
     flex-wrap:wrap;
+    justify-content:center;
 }
 
-/* Card design */
+/* PREMIUM CARD */
 .card{
-    background:rgba(255,255,255,0.05);
-    padding:20px;
-    border-radius:18px;
-    width:220px;
+    background: rgba(255,255,255,0.05);
+    border-radius:20px;
+    padding:25px;
+    width:240px;
+
     backdrop-filter: blur(15px);
-    transition:0.4s;
-    box-shadow:0 0 20px rgba(0,0,0,0.3);
+    border:1px solid rgba(255,255,255,0.1);
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
 }
 
+/* HOVER MAGIC */
 .card:hover{
-    transform: translateY(-10px) scale(1.05);
-    box-shadow:0 0 25px rgba(34,197,94,0.5);
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0 0 40px rgba(34,197,94,0.6);
 }
 
-/* Image */
-.card img{
-    width:100%;
-    border-radius:12px;
+/* TEXT */
+.card h3{
     margin-bottom:10px;
 }
 
-/* Text */
 .price{
     color:#22c55e;
     font-weight:bold;
+    margin:8px 0;
 }
 
 .rating{
     color:gold;
 }
 
-/* Loader */
+/* IMAGE */
+.card img{
+    width:100%;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+/* LOADER */
 .loader{
     display:none;
     margin-top:20px;
@@ -87,7 +103,6 @@ h1{
     border-radius:50%;
     width:40px;
     height:40px;
-    margin:auto;
     animation: spin 1s linear infinite;
 }
 

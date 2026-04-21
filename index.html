@@ -1,35 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Product Finder</title>
-    <link rel="stylesheet" href="./static/style.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body>
 
-<header>
-    🚀 Smart Product Finder
-</header>
+    <!-- HEADER -->
+    <header>
+        🚀 Smart Product Finder
+    </header>
 
-<div class="container">
+    <!-- MAIN -->
+    <div class="container">
 
-    <h1>Find Best Products Instantly</h1>
+        <h1>Find Best Products Instantly</h1>
 
-    <div class="search-box">
-        <input type="text" id="product" placeholder="Search product..." onkeyup="search()">
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input type="text" id="product" placeholder="Search product...">
+            <button onclick="search()">Search</button>
+        </div>
+
+        <!-- LOADER -->
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+            <p>Searching products...</p>
+        </div>
+
+        <!-- RESULTS -->
+        <div id="cards" class="cards"></div>
+
     </div>
 
-    <!-- Loader -->
-    <div class="loader" id="loader">
-        <div class="spinner"></div>
-    </div>
-
-    <!-- Cards -->
-    <div class="cards" id="cards"></div>
-
-</div>
-
-<script src="./static/script.js"></script>
+    <!-- JS (VERY IMPORTANT LINE) -->
+    <script src="static/script.js"></script>
 
 </body>
 </html>
