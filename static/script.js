@@ -62,7 +62,6 @@ function search(){
     });
 }
 
-/* QUICK SEARCH */
 function quickSearch(item){
     document.getElementById("product").value = item;
     search();
