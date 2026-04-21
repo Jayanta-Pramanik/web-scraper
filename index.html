@@ -1,113 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Smart Product Finder</title>
-
-    <style>
-        body{
-            background:#0f172a;
-            font-family:Arial;
-            color:white;
-            padding:30px;
-        }
-
-        .box{
-            max-width:1000px;
-            margin:auto;
-        }
-
-        input{
-            padding:12px;
-            width:300px;
-            border:none;
-            border-radius:8px;
-        }
-
-        button{
-            padding:12px 20px;
-            border:none;
-            border-radius:8px;
-            cursor:pointer;
-            background:#22c55e;
-            color:white;
-        }
-
-        table{
-            width:100%;
-            margin-top:25px;
-            border-collapse:collapse;
-            background:white;
-            color:black;
-        }
-
-        th,td{
-            padding:12px;
-            border:1px solid #ddd;
-        }
-
-        #loader{
-            margin-top:20px;
-            display:none;
-        }
-    </style>
+<title>Smart Product Finder</title>
+<style>
+body{
+background:#0f172a;
+font-family:Arial;
+color:white;
+padding:30px;
+}
+.box{
+max-width:1000px;
+margin:auto;
+}
+input{
+padding:12px;
+width:300px;
+border:none;
+border-radius:8px;
+}
+button{
+padding:12px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:#22c55e;
+color:white;
+}
+</style>
 </head>
 
 <body>
 
 <div class="box">
-    <h1>🛒 Smart Product Finder</h1>
+<h1>🛒 Smart Product Finder</h1>
 
-    <input type="text" id="product" placeholder="Enter product...">
-    <button onclick="search()">Search</button>
+<form>
+<input type="text" placeholder="Enter product name...">
+<button type="submit">Search</button>
+</form>
 
-    <div id="loader">🔄 Searching...</div>
-
-    <table id="table" style="display:none;">
-        <tr>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Rating</th>
-        </tr>
-        <tbody id="data"></tbody>
-    </table>
 </div>
-
-<script>
-function search(){
-
-    const loader = document.getElementById("loader");
-    const table = document.getElementById("table");
-    const data = document.getElementById("data");
-
-    loader.style.display = "block";
-    table.style.display = "none";
-    data.innerHTML = "";
-
-    // fake delay (simulate backend)
-    setTimeout(() => {
-
-        const demoData = [
-            {title:"iPhone 13", price:"60000", rating:"4.5"},
-            {title:"Samsung Galaxy", price:"45000", rating:"4.3"},
-            {title:"OnePlus Nord", price:"30000", rating:"4.4"}
-        ];
-
-        demoData.forEach(item => {
-            data.innerHTML += `
-                <tr>
-                    <td>${item.title}</td>
-                    <td>₹${item.price}</td>
-                    <td>${item.rating}</td>
-                </tr>
-            `;
-        });
-
-        loader.style.display = "none";
-        table.style.display = "table";
-
-    }, 1500);
-}
-</script>
 
 </body>
 </html>
