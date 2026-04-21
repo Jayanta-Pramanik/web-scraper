@@ -2,80 +2,51 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smart Product Finder</title>
-
 <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="logo">🚀 SmartFinder</div>
-    <div class="nav-links">
+<!-- 🔥 NAVBAR -->
+<header class="navbar">
+    <h2>🚀 SmartFinder</h2>
+    <nav>
         <a href="#">Home</a>
         <a href="#search">Search</a>
         <a href="#features">Features</a>
-    </div>
-</nav>
+    </nav>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-    <h1>Smart Product Finder</h1>
-    <p>Find the best products instantly with smart comparison</p>
-
-    <a href="#search">
-        <button class="start-btn">Get Started 🚀</button>
-    </a>
-</section>
-
-<!-- SEARCH -->
-<div class="container" id="search">
-
+<!-- 🔥 HERO -->
+<section class="hero" id="search">
     <h1>Find Best Products Instantly</h1>
-    <p class="subtitle">Compare products in seconds</p>
+    <p>Compare products in seconds</p>
 
     <div class="search-box">
-        <input type="text" id="product" placeholder="Search product..." onkeyup="search()">
+        <input type="text" id="product" placeholder="Search product...">
+        <button onclick="search()">Search</button>
     </div>
+</section>
 
-    <div id="loader" class="loader">
-        <div class="spinner"></div>
-        <p>Searching products...</p>
-    </div>
-
+<!-- 🔥 RESULTS -->
+<section class="results">
+    <div id="loader" class="loader">Loading...</div>
     <div id="cards" class="cards"></div>
+</section>
 
-</div>
-
-<!-- FEATURES -->
+<!-- 🔥 FEATURES -->
 <section class="features" id="features">
-
     <h2>Why Use This?</h2>
 
     <div class="feature-box">
-
-        <div class="feature">
-            ⚡ Fast Search  
-            <p>Instant results</p>
-        </div>
-
-        <div class="feature">
-            💰 Best Prices  
-            <p>Compare easily</p>
-        </div>
-
-        <div class="feature">
-            ⭐ Ratings  
-            <p>Top products</p>
-        </div>
-
+        <div class="feature">⚡ Fast Search<br><span>Instant results</span></div>
+        <div class="feature">💰 Best Prices<br><span>Compare easily</span></div>
+        <div class="feature">⭐ Ratings<br><span>Top products</span></div>
     </div>
-
 </section>
 
-<!-- FOOTER (clean version) -->
+<!-- 🔥 CLEAN FOOTER -->
 <footer>
     <p>© 2026 Smart Product Finder</p>
 </footer>
