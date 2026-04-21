@@ -23,8 +23,8 @@ if(item.title.toLowerCase().includes(query)){
 let card = `
 <div class="card">
 <h3>${item.title}</h3>
-<p style="color:#22c55e;">${item.price}</p>
-<p>${item.rating}</p>
+<p class="price">${item.price}</p>
+<p class="rating">${item.rating}</p>
 </div>
 `;
 
@@ -34,7 +34,7 @@ cards.innerHTML += card;
 
 });
 
-if(cards.innerHTML===""){
+if(cards.innerHTML === ""){
 cards.innerHTML = "<p>No results found</p>";
 }
 
