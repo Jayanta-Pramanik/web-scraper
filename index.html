@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Product Finder</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Product Finder</title>
 
-    <link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="static/style.css">
 </head>
 
 <body>
 
-<header>
-    🚀 Smart Product Finder
-</header>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">🚀 SmartFinder</div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#search">Search</a>
+        <a href="#features">Features</a>
+    </div>
+</nav>
 
-<div class="container">
+<!-- HERO (Landing Page) -->
+<section class="hero">
+    <h1>Smart Product Finder</h1>
+    <p>Find the best products instantly with smart comparison</p>
+
+    <a href="#search">
+        <button class="start-btn">Get Started 🚀</button>
+    </a>
+</section>
+
+<!-- SEARCH SECTION -->
+<div class="container" id="search">
 
     <h1>Find Best Products Instantly</h1>
-    <p class="subtitle">Compare products in seconds. Save money. Save time.</p>
+    <p class="subtitle">Compare products in seconds</p>
 
-    <!-- SEARCH -->
     <div class="search-box">
         <input type="text" id="product" placeholder="Search product..." onkeyup="search()">
     </div>
 
-    <!-- LOADER -->
     <div id="loader" class="loader">
         <div class="spinner"></div>
         <p>Searching products...</p>
     </div>
 
-    <!-- RESULTS -->
     <div id="cards" class="cards"></div>
 
 </div>
 
 <!-- FEATURES -->
-<section class="features">
+<section class="features" id="features">
 
     <h2>Why Use This?</h2>
 
@@ -44,17 +58,17 @@
 
         <div class="feature">
             ⚡ Fast Search  
-            <p>Get product results instantly</p>
+            <p>Instant results</p>
         </div>
 
         <div class="feature">
             💰 Best Prices  
-            <p>Compare prices easily</p>
+            <p>Compare easily</p>
         </div>
 
         <div class="feature">
             ⭐ Ratings  
-            <p>Find top-rated products</p>
+            <p>Top products</p>
         </div>
 
     </div>
