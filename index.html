@@ -2,45 +2,110 @@
 <html>
 <head>
 <title>Smart Product Finder</title>
+
 <style>
 body{
-background:#0f172a;
-font-family:Arial;
-color:white;
-padding:30px;
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
+
+/* Glass box */
 .box{
-max-width:1000px;
-margin:auto;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width:400px;
 }
+
+/* Title */
+h1{
+    margin-bottom:20px;
+}
+
+/* Input */
 input{
-padding:12px;
-width:300px;
-border:none;
-border-radius:8px;
+    padding:12px;
+    width:80%;
+    border:none;
+    border-radius:10px;
+    margin-bottom:15px;
+    outline:none;
 }
+
+/* Button */
 button{
-padding:12px 20px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-background:#22c55e;
-color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    background: linear-gradient(45deg,#22c55e,#16a34a);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform: scale(1.05);
+    background: linear-gradient(45deg,#16a34a,#15803d);
+}
+
+/* Fake result box */
+.result{
+    margin-top:20px;
+    display:none;
+}
+
+/* Loader */
+.loader{
+    border:4px solid #333;
+    border-top:4px solid #22c55e;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    animation:spin 1s linear infinite;
+    margin:20px auto;
+}
+
+@keyframes spin{
+    100%{transform:rotate(360deg);}
 }
 </style>
+
 </head>
 
 <body>
 
 <div class="box">
-<h1>🛒 Smart Product Finder</h1>
+    <h1>🛒 Smart Product Finder</h1>
 
-<form>
-<input type="text" placeholder="Enter product name...">
-<button type="submit">Search</button>
-</form>
+    <input type="text" id="product" placeholder="Enter product name...">
+    <br>
+    <button onclick="search()">Search</button>
 
+    <div class="result" id="result">
+        <div class="loader"></div>
+        <p>Finding best products...</p>
+    </div>
 </div>
+
+<script>
+function search(){
+    let box = document.getElementById("result");
+    box.style.display = "block";
+
+    setTimeout(()=>{
+        box.innerHTML = "<p>✅ Results ready (Backend needed for real data)</p>";
+    },2000);
+}
+</script>
 
 </body>
 </html>
