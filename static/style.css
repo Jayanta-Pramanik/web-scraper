@@ -1,8 +1,11 @@
+
+/* BODY */
 body{
 background:#020617;
 font-family:Arial;
 color:white;
 margin:0;
+cursor: url("https://cur.cursors-4u.net/cursors/cur-2/cur116.cur"), auto;
 }
 
 /* HERO */
@@ -19,6 +22,7 @@ text-align:center;
 font-size:50px;
 }
 
+/* BUTTON */
 .start-btn{
 padding:15px 30px;
 border:none;
@@ -27,6 +31,12 @@ background:#22c55e;
 color:white;
 cursor:pointer;
 margin-top:20px;
+transition:0.3s;
+}
+
+.start-btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #22c55e;
 }
 
 /* NAVBAR */
@@ -41,6 +51,11 @@ background:#0f172a;
 .navbar a{
 color:white;
 text-decoration:none;
+transition:0.3s;
+}
+
+.navbar a:hover{
+color:#22c55e;
 }
 
 /* SEARCH */
@@ -59,6 +74,7 @@ padding:15px;
 width:300px;
 border:none;
 border-radius:10px;
+outline:none;
 }
 
 button{
@@ -69,6 +85,12 @@ border-radius:10px;
 background:#22c55e;
 color:white;
 cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #22c55e;
 }
 
 /* QUICK SEARCH */
@@ -84,6 +106,12 @@ margin:5px;
 border-radius:8px;
 cursor:pointer;
 display:inline-block;
+transition:0.3s;
+}
+
+.top-search span:hover{
+background:#16a34a;
+transform:scale(1.1);
 }
 
 /* CARDS */
@@ -101,6 +129,12 @@ padding:20px;
 border-radius:15px;
 width:250px;
 text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 0 30px rgba(34,197,94,0.7);
 }
 
 .card img{
@@ -109,8 +143,10 @@ border-radius:10px;
 margin-bottom:10px;
 }
 
+/* TEXT */
 .price{
 color:#22c55e;
+font-weight:bold;
 }
 
 .rating{
