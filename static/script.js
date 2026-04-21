@@ -81,3 +81,35 @@ function quickSearch(item){
 document.getElementById("product").value = item;
 search();
 }
+
+// 🔥 3D EFFECT
+document.addEventListener("mousemove", function(e){
+
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+let rect = card.getBoundingClientRect();
+
+let x = e.clientX - rect.left;
+let y = e.clientY - rect.top;
+
+let centerX = rect.width/2;
+let centerY = rect.height/2;
+
+let rotateX = -(y-centerY)/10;
+let rotateY = (x-centerX)/10;
+
+card.style.transform = `
+perspective(1000px)
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)
+scale(1.05)
+`;
+});
+});
+
+document.addEventListener("mouseleave", ()=>{
+document.querySelectorAll(".card").forEach(card=>{
+card.style.transform="none";
+});
+});

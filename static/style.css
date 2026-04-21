@@ -1,10 +1,8 @@
-
-/* BODY */
 body{
-background:#020617;
+margin:0;
 font-family:Arial;
 color:white;
-margin:0;
+background: radial-gradient(circle at 20% 20%, #0f172a, #020617);
 cursor: url("https://cur.cursors-4u.net/cursors/cur-2/cur116.cur"), auto;
 }
 
@@ -22,7 +20,6 @@ text-align:center;
 font-size:50px;
 }
 
-/* BUTTON */
 .start-btn{
 padding:15px 30px;
 border:none;
@@ -51,11 +48,6 @@ background:#0f172a;
 .navbar a{
 color:white;
 text-decoration:none;
-transition:0.3s;
-}
-
-.navbar a:hover{
-color:#22c55e;
 }
 
 /* SEARCH */
@@ -74,7 +66,6 @@ padding:15px;
 width:300px;
 border:none;
 border-radius:10px;
-outline:none;
 }
 
 button{
@@ -124,16 +115,17 @@ flex-wrap:wrap;
 }
 
 .card{
-background:#0f172a;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
 padding:20px;
 border-radius:15px;
 width:250px;
 text-align:center;
-transition:0.3s;
+transition:0.2s ease;
+transform-style:preserve-3d;
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.05);
 box-shadow:0 0 30px rgba(34,197,94,0.7);
 }
 
@@ -143,10 +135,8 @@ border-radius:10px;
 margin-bottom:10px;
 }
 
-/* TEXT */
 .price{
 color:#22c55e;
-font-weight:bold;
 }
 
 .rating{
