@@ -5,41 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Product Finder</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        🚀 Smart Product Finder
-    </header>
+<header>
+    🚀 Smart Product Finder
+</header>
 
-    <!-- MAIN -->
-    <div class="container">
+<div class="container">
 
-        <h1>Find Best Products Instantly</h1>
+    <h1>Find Best Products Instantly</h1>
+    <p class="subtitle">Compare products in seconds. Save money. Save time.</p>
 
-        <!-- SEARCH -->
-        <div class="search-box">
-            <input type="text" id="product" placeholder="Search product...">
-            <button onclick="search()">Search</button>
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input type="text" id="product" placeholder="Search product..." onkeyup="search()">
+    </div>
+
+    <!-- LOADER -->
+    <div id="loader" class="loader">
+        <div class="spinner"></div>
+        <p>Searching products...</p>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="cards" class="cards"></div>
+
+</div>
+
+<!-- FEATURES -->
+<section class="features">
+
+    <h2>Why Use This?</h2>
+
+    <div class="feature-box">
+
+        <div class="feature">
+            ⚡ Fast Search  
+            <p>Get product results instantly</p>
         </div>
 
-        <!-- LOADER -->
-        <div id="loader" class="loader">
-            <div class="spinner"></div>
-            <p>Searching products...</p>
+        <div class="feature">
+            💰 Best Prices  
+            <p>Compare prices easily</p>
         </div>
 
-        <!-- RESULTS -->
-        <div id="cards" class="cards"></div>
+        <div class="feature">
+            ⭐ Ratings  
+            <p>Find top-rated products</p>
+        </div>
 
     </div>
 
-    <!-- JS (VERY IMPORTANT LINE) -->
-    <script src="static/script.js"></script>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Smart Product Finder | Built by Jayanta 🚀</p>
+</footer>
+
+<script src="static/script.js"></script>
 
 </body>
 </html>
