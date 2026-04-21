@@ -1,11 +1,16 @@
-async function search(){
+function search(){
 
     let query = document.getElementById("product").value.toLowerCase();
     let cards = document.getElementById("cards");
     let loader = document.getElementById("loader");
 
-    // reset
     cards.innerHTML = "";
+
+    if(query === ""){
+        loader.style.display = "none";
+        return;
+    }
+
     loader.style.display = "block";
 
     setTimeout(()=>{
@@ -51,5 +56,5 @@ async function search(){
             cards.innerHTML += card;
         });
 
-    },1500);
+    },800);
 }
