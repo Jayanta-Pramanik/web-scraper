@@ -1,3 +1,5 @@
+
+/* BODY */
 body{
 margin:0;
 font-family:Arial;
@@ -6,7 +8,7 @@ background: radial-gradient(circle at 20% 20%, #0f172a, #020617);
 cursor: url("https://cur.cursors-4u.net/cursors/cur-2/cur116.cur"), auto;
 }
 
-/* HERO */
+/* HERO (Landing Page) */
 .hero{
 height:100vh;
 display:flex;
@@ -18,8 +20,14 @@ text-align:center;
 
 .hero h1{
 font-size:50px;
+margin-bottom:10px;
 }
 
+.hero p{
+opacity:0.7;
+}
+
+/* BUTTON */
 .start-btn{
 padding:15px 30px;
 border:none;
@@ -36,6 +44,26 @@ transform:scale(1.1);
 box-shadow:0 0 20px #22c55e;
 }
 
+/* HERO IMAGES */
+.hero-images{
+margin-top:40px;
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.hero-images img{
+width:200px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.hero-images img:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px rgba(34,197,94,0.7);
+}
+
 /* NAVBAR */
 .navbar{
 display:flex;
@@ -50,12 +78,13 @@ color:white;
 text-decoration:none;
 }
 
-/* SEARCH */
+/* SEARCH TITLE */
 h1{
 text-align:center;
 margin-top:60px;
 }
 
+/* SEARCH BOX */
 .search-box{
 text-align:center;
 margin-top:20px;
@@ -66,8 +95,10 @@ padding:15px;
 width:300px;
 border:none;
 border-radius:10px;
+outline:none;
 }
 
+/* BUTTON */
 button{
 padding:15px 25px;
 margin-left:10px;
@@ -126,6 +157,7 @@ transform-style:preserve-3d;
 }
 
 .card:hover{
+transform:translateY(-10px) scale(1.05);
 box-shadow:0 0 30px rgba(34,197,94,0.7);
 }
 
@@ -135,8 +167,10 @@ border-radius:10px;
 margin-bottom:10px;
 }
 
+/* TEXT */
 .price{
 color:#22c55e;
+font-weight:bold;
 }
 
 .rating{
